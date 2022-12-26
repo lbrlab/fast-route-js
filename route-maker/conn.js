@@ -1,9 +1,17 @@
 'use strict'
 
+/**
+ * Created by: Daniel Proença
+ * License: MIT
+ * Email(personal): devillabdeveloper@gmail.com || danielproenca89@gmail.com
+ * Email(professional): daniel.proenca@lbrtelecom.com.br
+ * 
+ */
+
 const config = require('./config.json')
 const mysql = require('mysql2')
 
-class Connection{
+module.exports = class Connection{
 
     constructor(server){
     this.server = server
@@ -36,7 +44,9 @@ class Connection{
 
 
     try{
-        const rows = await this.pool.query(query, params);
+        
+        const rows = await this.pool.query(query, params != null?Object.values(params):'');
+       
         return rows[0];
 
     }catch(err){
@@ -163,5 +173,5 @@ class Connection{
 
 # RUN!!!!
 
-teste()
+test()
 */
