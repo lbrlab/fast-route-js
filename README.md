@@ -92,7 +92,7 @@ Pattern:
 
 
 | Method | Use query |Expected Data |
-| ----------- | ----------- |
+| ------ | --------- |--------------|
 | GET | Yes | {param1:"param1", ...} or null |
 | POST | No  | [{column:"value", colum2:"value2",...}, {...}] |
 | PUT | No | {data:{column:"NewValue", ...}, where:"column = 'SearchValue'" |
