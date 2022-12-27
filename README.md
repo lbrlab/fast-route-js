@@ -78,6 +78,7 @@ Pattern:
         "path": "Route",
         "method": "Method", GET|POST|PUT|DELETE
         "query": "Query"
+	"table": "TableIfNoGetMethod"
     },
     {
         "name":"auth",
