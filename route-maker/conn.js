@@ -8,7 +8,7 @@
  * 
  */
 
-const config = require('./config.json')
+const config = require('../config/config.json')
 const mysql = require('mysql2')
 
 module.exports = class Connection{
@@ -38,6 +38,22 @@ module.exports = class Connection{
     }
     }
 
+
+    async execute(query, params=null){
+        
+    try{
+        
+        const run = await this.pool.query(query, params != null?Object.values(params):'');
+       
+        return run[0];
+
+    }catch(err){
+        
+        this.errors.push(err);
+        return err;
+    }
+
+    }
 
 
     async get_result(query, params=null){
@@ -91,7 +107,7 @@ module.exports = class Connection{
     }
 
 
-    async update(table, obj, where=false){
+    async update(table, obj, where=''){
         try{
 
             const colums = Object.keys(obj)
@@ -99,7 +115,7 @@ module.exports = class Connection{
 
             const params = colums.map((e,i)=>`${'`'+e+'`'}='${values[i]}'`).join(',')
 
-            const req = await this.pool.query(`UPDATE ${table} SET ${params} ${where?'WHERE '+ where:''}`)
+            const req = await this.pool.query(`UPDATE ${table} SET ${params} ${where != ''?'WHERE '+ where:''}`)
 
             return req
             

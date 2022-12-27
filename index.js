@@ -1,11 +1,20 @@
 'use strict'
-const http = require('http')
-const servers = require('./servers.json')
-const RouteMaker = require('./route-maker')
 
+/**
+ * Created by: Daniel Proença
+ * License: MIT
+ * Email(personal): devillabdeveloper@gmail.com || danielproenca89@gmail.com
+ * Email(professional): daniel.proenca@lbrtelecom.com.br
+ * 
+ */
+
+const http = require('http')
+const servers = require('./config/end_point.json')
+const RouteMaker = require('./route-maker')
+require("dotenv-safe").config();
 
 const app = new RouteMaker(servers)
 
 const server = http.createServer(app.createRoute()); 
-server.listen(3001);
-console.log("Servidor escutando na porta 3000...")
+server.listen(process.env.PORT);
+console.log(`Servidor escutando na porta ${process.env.PORT}...`)
