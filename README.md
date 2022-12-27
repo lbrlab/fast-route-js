@@ -7,6 +7,8 @@
 
 `git clone https://github.com/lbrlab/fast-route-js.git`
 
+`npm install`
+
 2. Create the files "config.json", "end_point.json" in the folder "config":
 
 **config.json**
