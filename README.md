@@ -12,6 +12,7 @@
 2. **Create the files "config.json", "end_point.json" in the folder "config":**
 
 **config.json**
+
 	```
 {
 
