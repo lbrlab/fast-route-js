@@ -129,4 +129,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-route-maker/config.json
+config/config.json
+config/end_point.json

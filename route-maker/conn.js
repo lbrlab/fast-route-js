@@ -54,7 +54,7 @@ class Connection{
 
             const colums = Object.keys(obj)
             const values = Object.values(obj)
-            const req = await this.pool.query(`INSERT INTO ${table} (${colums.join(',')}) values (${values.map(e=>`'${e}'`).join(',')})`)
+            const req = await this.pool.query(`REPLACE INTO ${table} (${colums.join(',')}) values (${values.map(e=>`'${e}'`).join(',')})`)
             
             }else{
 
@@ -63,7 +63,7 @@ class Connection{
             try{
                 const colums = Object.keys(o)
                 const values = Object.values(o)
-                const req = await this.pool.query(`INSERT INTO ${table} (${colums.join(',')}) values (${values.map(e=>`'${e}'`).join(',')})`)        
+                const req = await this.pool.query(`REPLACE INTO ${table} (${colums.join(',')}) values (${values.map(e=>`'${e}'`).join(',')})`)        
                 }
             catch(err){
                 console.log(err)
