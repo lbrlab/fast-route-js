@@ -1,15 +1,15 @@
-# fast-route-js
+# fast-route-js 🚀
  It integrates any MySQL database with an API in a simple and fast way.
 
 
 
-1. Download or clone the project:
+1. **Download or clone the project:**  ⬇️ || 🐑
 
 `git clone https://github.com/lbrlab/fast-route-js.git`
 
 `npm install`
 
-2. Create the files "config.json", "end_point.json" in the folder "config":
+2. **Create the files "config.json", "end_point.json" in the folder "config":**
 
 **config.json**
 	```
