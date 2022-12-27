@@ -71,7 +71,7 @@ the structure should follow the pattern:
 This file contains the endpoints and the instruction that will execute in the database.
 
 Pattern:
-
+```
 [
 {
         "name":"NameForConnection", 1*
@@ -89,7 +89,7 @@ Pattern:
     {...},
     ...
 ]
-
+```
 
 | Method | Use query |Expected Data |
 | ------ | --------- |--------------|
@@ -101,13 +101,14 @@ Pattern:
 
 
 In GET method: 
-
+```
 {
         "name":"test",
         "path": "local/test",
         "method": "GET",
         "query": "select * where column1 = ? and column2 = ?"
-},
+}
+```
 
 The value of column1 and column2, must be passed in the order they appear in the query ({colum1: 'value1', colum2: 'value2'}).
 
@@ -116,6 +117,7 @@ In other methods, follow the table.
 
 
 **.env**
+
 AUTH= 1 if use authentication. Default is 0
 SECRET=MySecret --Usage for authentication
 PORT=3001 -- Application port
